@@ -79,7 +79,7 @@ impl ResourceScanner for StringScanner {
         entries
             .iter()
             .flat_map(|entry| {
-                let resource_path = entry.path().to_str().unwrap_or_else(|| "");
+                let resource_path = entry.path().to_str().unwrap_or_default();
                 let origin_name = entry.file_name().to_str().unwrap_or_default();
                 let keys = StringScanner::collect_string_keys(entry);
 

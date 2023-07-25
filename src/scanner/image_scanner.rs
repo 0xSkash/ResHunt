@@ -5,6 +5,7 @@ use crate::scanner::ResourceScanner;
 pub struct ImageScanner;
 
 impl ResourceScanner for ImageScanner {
+    //TODO: Also check Storyboard file
     fn collect_directories(&self, folder_path: &str) -> Vec<DirEntry> {
         walkdir::WalkDir::new(folder_path)
             .follow_links(true)
